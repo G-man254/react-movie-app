@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MovieList from "./components/MovieList"; // Component to list all movies
 import Filter from "./components/Filter"; // Component to filter and add movies
-import MovieCard from "./components/MovieCard"; // (Imported but not used here)
+// import MovieCard from "./components/MovieCard"; // (Imported but not used here)
 import MovieDescription from "./components/MovieDescription"; // Component to show movie details
 import "./App.css"; // Import CSS for styling
+// import VideoPlayer from "./components/VideoPlayer";
 
 function App() {
   // Movies state with an initial list of movies
@@ -85,7 +86,11 @@ function App() {
           {/* Movie Description Page Route */}
           <Route
             path="/movie/:title" // Dynamic route based on movie title
-            element={<MovieDescription movies={movies} />}
+            element={
+              <>
+              <MovieDescription movies={movies} />
+              </>
+            }
           />
         </Routes>
       </div>

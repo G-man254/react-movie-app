@@ -1,5 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom"; // Import hooks from react-router
+import VideoPlayer from "./VideoPlayer";
 
 // MovieDescription component shows the detailed view of a selected movie
 function MovieDescription({ movies }) {
@@ -13,7 +14,7 @@ function MovieDescription({ movies }) {
   if (!movie) return <h2>Movie not found!</h2>;
 
   return (
-    <div className="movie-description">
+    <div className="movie-description h-full">
       {/* Display movie title */}
       <h2>{movie.title}</h2>
 
@@ -22,6 +23,7 @@ function MovieDescription({ movies }) {
 
       {/* Embed the trailer video using an iframe */}
       <div>
+        <VideoPlayer />
         <iframe
           width="560"
           height="315"
